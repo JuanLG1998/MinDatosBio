@@ -1,7 +1,7 @@
 #####################################
 # CONTEO DE GENES DE ARCHIVOS FASTQ #
-# Autor: Alan Omar Lozada S·nchez   #
-# Date: 08/03/2022                  #
+# Autor: L√≥pez Garc√≠a Juan √Ångel    #
+# Date: 08/04/2022                  #
 #####################################
 
 # Install packages and dependencies
@@ -73,9 +73,9 @@ if (length(f2) > 0){
   
   # EJECUCION PARA LAS MUESTRAS PAIRED
   # Contar los genes. Genera archivos _trimed.fastq.gz, bam files, index y rnaFeatureCount.rds
-	#Dependiendo de los recursos informaticos de su equipo, los par·metros subReadThreads y shortreadRAM deben ser modificados
+	#Dependiendo de los recursos informaticos de su equipo, los par√°metros subReadThreads y shortreadRAM deben ser modificados
 	# Donde:
-	# 	subReadThreads es el n˙mero de hilos que se utilizar· para el procesamiento
+	# 	subReadThreads es el n√∫mero de hilos que se utilizar√° para el procesamiento
 	#	shortreadRAM es la cantidad de ram que el programa puede utilizar
 	# Para ambos casos se recomienda utilizar la mitad de los recursos disponibles (mitad de hilos del procesador y mitad de RAM de la computadora) 
   seqW(fileList1=paired_files,fileList2=f2,subReadThreads=8L,shortreadRAM=3e8,genomeRefFile=data_args$genomic_fna_path, genomeAnnotFile=data_args$genomic_gtf_path, alignPairedOutput=gsub(basename(paired_files),pattern ="\\.fastq\\.gz",replacement = "\\.bam")) #RNAseq
@@ -87,9 +87,9 @@ if (length(f2) > 0){
     # EJECUCION PARA LAS MUESTRAS SINGLE
     # Contar los genes. Genera archivos _trimed.fastq.gz, bam files, index y rnaFeatureCount.rds
 
-	#Dependiendo de los recursos informaticos de su equipo, los par·metros subReadThreads y shortreadRAM deben ser modificados
+	#Dependiendo de los recursos informaticos de su equipo, los par√°metros subReadThreads y shortreadRAM deben ser modificados
 	# Donde:
-	# 	subReadThreads es el n˙mero de hilos que se utilizar· para el procesamiento
+	# 	subReadThreads es el n√∫mero de hilos que se utilizar√° para el procesamiento
 	#	shortreadRAM es la cantidad de ram que el programa puede utilizar
 	# Para ambos casos se recomienda utilizar la mitad de los recursos disponibles (mitad de hilos del procesador y mitad de RAM de la computadora) 
     seqW(fileList1=single_files,fileList2=NULL,subReadThreads=8L,shortreadRAM=3e8,genomeRefFile=data_args$genomic_fna_path, genomeAnnotFile=data_args$genomic_gtf_path) #RNAseq
@@ -112,9 +112,9 @@ if (length(f2) > 0){
   f2 = NULL
   # Contar los genes. Genera archivos _trimed.fastq.gz, bam files, index y rnaFeatureCount.rds
 	
-	#Dependiendo de los recursos informaticos de su equipo, los par·metros subReadThreads y shortreadRAM deben ser modificados
+	#Dependiendo de los recursos informaticos de su equipo, los par√°metros subReadThreads y shortreadRAM deben ser modificados
 	# Donde:
-	# 	subReadThreads es el n˙mero de hilos que se utilizar· para el procesamiento
+	# 	subReadThreads es el n√∫mero de hilos que se utilizar√° para el procesamiento
 	#	shortreadRAM es la cantidad de ram que el programa puede utilizar
 	# Para ambos casos se recomienda utilizar la mitad de los recursos disponibles (mitad de hilos del procesador y mitad de RAM de la computadora) 
   seqW(fileList1=f1,fileList2=f2,subReadThreads=8L,shortreadRAM=3e8,genomeRefFile=data_args$genomic_fna_path, genomeAnnotFile=data_args$genomic_gtf_path) #RNAseq
